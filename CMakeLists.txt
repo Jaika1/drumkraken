@@ -8,6 +8,12 @@ enable_testing()
 file(GLOB_RECURSE DRUMNKRAKEN_SOURCE src/*.cpp src/*.h)
 add_executable(drumkraken ${DRUMNKRAKEN_SOURCE})
 
+#TJALib
+target_include_directories(drumkraken PUBLIC deps/tjalib/src)
+
+add_subdirectory(deps/tjalib)
+target_link_libraries(drumkraken tjalib)
+
 #Raylib
 set(raylib_USE_STATIC_LIBS)
 
