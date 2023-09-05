@@ -14,3 +14,7 @@ void Scene::Draw() {
     DrawText(text, GetRenderWidth()/2 - textw/2, GetRenderHeight()/2 - 16, 32, WHITE);
     EndDrawing();
 }
+
+void Scene::PostDraw() {
+    
+}

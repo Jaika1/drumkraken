@@ -3,8 +3,10 @@
 #include <string>
 #include "../scene/InitScene.h"
 
+Game* game = new Game();
+
 void Game::Run() {
-    scene = new InitScene();
+    LoadScene(new InitScene());
 
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_WINDOW_RESIZABLE | FLAG_WINDOW_ALWAYS_RUN);
 
@@ -12,16 +14,39 @@ void Game::Run() {
     while(!WindowShouldClose()) {
         Update();
         Draw();
+        PostDraw();
     }
     CloseWindow();
 
-    delete scene;
+    UnloadScene();
 }
 
 void Game::Update() {
-    scene->Update();
+    _scene->Update();
 }
 
 void Game::Draw() {
-    scene->Draw();
+    _scene->Draw();
+}
+
+void Game::PostDraw() {
+    _scene->PostDraw();
+    if (_sceneToChange != nullptr) {
+        UnloadScene();
+        LoadScene(_sceneToChange);
+        _sceneToChange = nullptr;
+    }
+}
+
+void Game::ChangeScene(Scene* scene) {
+    _sceneToChange = scene;
+}
+
+void Game::LoadScene(Scene* scene) {
+    _scene = scene;
+}
+
+void Game::UnloadScene() {
+    delete _scene;
+    _scene = nullptr;
 }
