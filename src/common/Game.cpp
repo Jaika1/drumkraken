@@ -2,14 +2,15 @@
 #include <raylib.h>
 #include <string>
 #include "../scene/InitScene.h"
+#include "../resources.h"
+
+using namespace std;
 
 Game* game = new Game();
 
 void Game::Run() {
     LoadScene(new InitScene());
-
     SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_WINDOW_RESIZABLE | FLAG_WINDOW_ALWAYS_RUN);
-
     InitWindow(1280, 720, "Drum Kraken");
     while(!WindowShouldClose()) {
         Update();

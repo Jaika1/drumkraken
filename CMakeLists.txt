@@ -8,13 +8,13 @@ enable_testing()
 file(GLOB_RECURSE DRUMKRAKEN_SOURCE src/*)
 add_executable(drumkraken ${DRUMKRAKEN_SOURCE})
 
-#TJALib
+# TJALib
 target_include_directories(drumkraken PUBLIC deps/tjalib/src)
 
 add_subdirectory(deps/tjalib)
 target_link_libraries(drumkraken tjalib)
 
-#Raylib
+# Raylib
 set(raylib_USE_STATIC_LIBS)
 
 target_include_directories(drumkraken PUBLIC deps/raylib/src)

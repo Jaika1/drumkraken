@@ -2,9 +2,12 @@
 #include <raylib.h>
 #include <math.h>
 #include "../common/Game.h"
+#include "ChartScene.h"
+#include "../resources.h"
 
 void InitScene::Update() {
     if (!_loadingComplete) {
+        LoadResources();
         _loadingComplete = true;
     }
 }
@@ -28,6 +31,6 @@ void InitScene::PostDraw() {
     _screenFadeAmount += GetFrameTime() / 1.0f; // RHS is time in seconds.
     if (_screenFadeAmount >= 1.0f) {
         //Change scene
-        game->ChangeScene(new Scene());
+        game->ChangeScene(new ChartScene());
     }
 }
