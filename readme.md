@@ -25,7 +25,7 @@ git checkout 4.5.0
 ```
 This should but the repo in a headless state, and running `git status` like before should suggest so.
 
-From here, you should be ready to build! You could likely create a build directory and use `cmake ..` from the command line with minimal arguments, although I have yet to test such since I have been using my IDE of choice (Visual Studio Code with the "CMake Tools" extension) to do most of this configuration for me and it has been working no problem. I have also only tested builds on Windows so far, so do let me know of any issues that may arise when attempting to compile on other platforms.
+From here, you should be ready to build! You could likely create a build directory and use `cmake ..` from the command line with minimal arguments, although I have yet to test such since I have been using my IDE of choice (Visual Studio Code with the "CMake Tools" extension) to do most of this configuration for me and it has been working no problem. I have only tested builds on Windows so far, so do let me know of any issues that may arise when attempting to compile on other platforms.
 
 ## Dependencies
 - [Raylib](https://www.raylib.com)
