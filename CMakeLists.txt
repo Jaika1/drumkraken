@@ -5,8 +5,8 @@ include(CTest)
 enable_testing()
 
 # DrumKraken executable
-file(GLOB_RECURSE DRUMNKRAKEN_SOURCE src/*.cpp src/*.h)
-add_executable(drumkraken ${DRUMNKRAKEN_SOURCE})
+file(GLOB_RECURSE DRUMKRAKEN_SOURCE src/*)
+add_executable(drumkraken ${DRUMKRAKEN_SOURCE})
 
 #TJALib
 target_include_directories(drumkraken PUBLIC deps/tjalib/src)
